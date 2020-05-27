@@ -1,0 +1,251 @@
+<template>
+  <b-col cols="12">
+    <b-row class="bg-dark px-4 pt-3 pb-0">
+      <b-col>
+        <b-container>
+          <b-row class="mb-5">
+            <b-col v-if="defaults.product" cols="6" sm="4" :md="md">
+              <ul>
+                <li>
+                  <strong>{{ $t('section.gk11oe') }}</strong>
+                </li>
+                <li v-if="defaults.product.showUps">
+                  <nuxt-link :to="product['UPS电源']">
+                    {{ $t('section.4t9bzs') }}
+                  </nuxt-link>
+                </li>
+                <li v-if="defaults.product.showDataCenter">
+                  <nuxt-link :to="product['数据中心']">
+                    {{ $t('section.4r35dn') }}
+                  </nuxt-link>
+                </li>
+                <li v-if="defaults.product.showAir">
+                  <nuxt-link :to="product['机房空调']">
+                    {{ $t('section.f7h57b') }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </b-col>
+            <b-col v-if="defaults.support" cols="6" sm="4" :md="md">
+              <ul>
+                <li>
+                  <strong>{{ $t('section.q5vjss') }}</strong>
+                </li>
+                <li v-if="defaults.buy && defaults.buy.serverCenter">
+                  <nuxt-link :to="about['销售服务中心']">
+                    {{ $t('section.ps0tuh') }}
+                  </nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link :to="support['服务支持']">
+                    {{ $t('section.y2a257') }}
+                  </nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link :to="support['常见问题']">
+                    {{ $t('section.o5n0th') }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </b-col>
+            <b-col v-if="defaults.buy" cols="6" sm="4" md="3">
+              <ul>
+                <li>
+                  <strong>{{ $t('section.21ws8d') }}</strong>
+                </li>
+                <li v-if="defaults.buy.serverCenter">
+                  <nuxt-link :to="about['经销商列表']">
+                    {{ $t('section.u7wjbw') }}
+                  </nuxt-link>
+                </li>
+                <li v-if="defaults.buy.blue">
+                  <a href="https://lgsm.tmall.com/">
+                    {{
+                      $t('section.6v39gj')
+                    }}
+                  </a>
+                </li>
+                <li v-if="defaults.buy.Tmall">
+                  <a href="https://leidisi.tmall.com/" target="_bank">
+                    {{
+                      $t('section.k9mydj')
+                    }}
+                  </a>
+                </li>
+                <li v-if="defaults.buy.jd">
+                  <a href="https://mall.jd.com/index-131620.html" target="_bank">
+                    {{
+                      $t('section.pfuunc')
+                    }}
+                  </a>
+                </li>
+                <li v-for="(val,key) in defaults.buy.userMall || []" :key="key">
+                  <a
+                    :href="val.src || '#'"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >{{ val.title || '' }}</a>
+                </li>
+              </ul>
+            </b-col>
+            <b-col cols="6" sm="4" :md="md">
+              <ul>
+                <li>
+                  <strong>{{ $t('guan-yu') }}{{ defaults.name }}</strong>
+                </li>
+                <li>
+                  <nuxt-link :to="about['公司简介']">
+                    {{ $t('section.v0otza') }}
+                  </nuxt-link>
+                </li>
+                <li v-if="defaults.news">
+                  <nuxt-link :to="news['全部新闻']">
+                    {{ $t('section.qis2vp') }}
+                  </nuxt-link>
+                </li>
+              </ul>
+            </b-col>
+            <b-col cols="6" sm="4" :md="md">
+              <ul>
+                <li>
+                  <strong>{{ $t('section.ri1giq') }}</strong>
+                </li>
+                <li>
+                  <a href="http://www.pesiv.com" target="_bank">
+                    {{
+                      $t('section.l7qkwb')
+                    }}
+                  </a>
+                </li>
+                <!-- <li>
+                  <a href="http://116.62.48.175:81" target="_bank">{{
+                    $t('section.wkyimq')
+                  }}</a>
+                </li>-->
+              </ul>
+            </b-col>
+          </b-row>
+        </b-container>
+      </b-col>
+    </b-row>
+    <friend-link />
+    <b-row>
+      <b-col cols="12" class="p-0 bg-dark p-2 d-flex flex-column flex-sm-row flex-wrap">
+        <div>
+          <nuxt-link to="/sitemap" class="px-1">
+            {{ $t('footer.9c708c') }}
+          </nuxt-link>
+
+          <nuxt-link :to="about['联系我们']" class="px-1">
+            {{ $t('footer.fp5qvs') }}
+          </nuxt-link>
+
+          <nuxt-link :to="about['加入我们']" class="px-1">
+            {{ $t('footer.ce1e0h') }}
+          </nuxt-link>
+
+          <nuxt-link :to="about['使用声明']" class="px-1">
+            {{ $t('footer.amhzvr') }}
+          </nuxt-link>
+
+          <nuxt-link :to="about['隐私政策']" class="px-1">
+            {{ $t('footer.5d7lkm') }}
+          </nuxt-link>
+        </div>
+        <div class="beian">
+          <span class="d-flex flex-column flex-sm-row align-items-center">
+            <span>
+              <em>© 2019 All Rights Reserved</em>
+            </span>
+            <span>{{ defaults.name }}</span>
+            <span>
+              <b-link target="_blank" href="http://www.beian.miit.gov.cn">
+                {{
+                  defaults.home.beian
+                }}
+              </b-link>
+            </span>
+          </span>
+        </div>
+      </b-col>
+    </b-row>
+  </b-col>
+</template>
+<script lang="ts">
+import Vue from 'vue'
+import { product, support, about, news } from './hrefs'
+import FriendLink from './FriendLink.vue'
+export default Vue.extend({
+  name: 'LadisFooter',
+  components: { FriendLink },
+  data () {
+    return {
+      product,
+      support,
+      about,
+      news,
+      defaults: this.$store.state.defaults,
+      md: this.$store.state.defaults.buy ? 2 : 3
+    }
+  }
+})
+</script>
+
+<style lang="scss" scoped>
+@media (min-width: 576px) {
+  .colsm-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    height: fit-content;
+  }
+  ul {
+    list-style: inside;
+    padding-left: 2rem;
+  }
+  .beian {
+    margin-left: auto;
+  }
+  .beian span {
+    margin-left: 0px;
+  }
+}
+
+.beian span {
+  margin-left: 8px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+* {
+  color: rgba(255, 255, 255, 0.5);
+}
+.section {
+  height: min-content;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 25px;
+}
+.main {
+  width: 100%;
+}
+.col-20 {
+  width: 17%;
+  border-right: ridge 1px;
+  margin: 5px;
+}
+a:hover {
+  color: white;
+}
+em,
+span,
+a,
+strong {
+  color: aliceblue;
+}
+strong {
+  font-size: 1.2rem;
+}
+</style>
