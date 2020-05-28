@@ -1,17 +1,12 @@
 <template>
   <b-container id="ladis-body" fluid class="p-0 m-0 flex-column">
-    <b-row class="main-default" no-gutters>
-      <b-col cols="12" class=" bg-dark">
-        <!-- head头 -->
-        <ladis-head />
-      </b-col>
-    </b-row>
+    <ladis-head style="background-color: #ffffff" />
     <b-row class="flex-grow-1" no-gutters>
       <b-col>
-        <nuxt class=" p-0" />
+        <nuxt class="p-0" />
       </b-col>
     </b-row>
-    <b-row no-gutters class=" ">
+    <b-row no-gutters class=" mt-5">
       <b-col>
         <ladis-footer />
       </b-col>
@@ -19,9 +14,9 @@
   </b-container>
 </template>
 <script lang="ts">
-import Vue from 'vue'
-import ladisHead from '../components/head.vue'
-import ladisFooter from '../components/footer.vue'
+import Vue from "vue";
+import ladisHead from "../components/head.vue";
+import ladisFooter from "../components/footer.vue";
 export default Vue.extend({
   components: {
     ladisHead,
@@ -30,13 +25,13 @@ export default Vue.extend({
   head: {
     link: [
       {
-        href: '//at.alicdn.com/t/font_1290509_iyq1zhprcvc.css',
-        type: 'text/css',
-        rel: 'stylesheet'
+        href: "//at.alicdn.com/t/font_1290509_iyq1zhprcvc.css",
+        type: "text/css",
+        rel: "stylesheet"
       }
     ]
   }
-})
+});
 </script>
 
 <style scss>

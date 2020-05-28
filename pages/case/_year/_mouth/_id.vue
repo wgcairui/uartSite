@@ -85,7 +85,7 @@ export default Vue.extend({
   head () {
     const Page = this.$data.list as caseList
     return {
-      title: `${Page.PageTitle} - ${this.$defaults.name}`,
+      title: `${Page.PageTitle} - `,
       meta: [
         {
           name: 'keywords',

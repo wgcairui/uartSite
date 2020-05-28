@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _60ab8830 = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
 const _46a05dac = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
 const _1561502d = () => interopDefault(import('../pages/admin/index/index.vue' /* webpackChunkName: "pages/admin/index/index" */))
 const _14ad1530 = () => interopDefault(import('../pages/admin/index/about.vue' /* webpackChunkName: "pages/admin/index/about" */))
@@ -23,15 +22,11 @@ const _2a93d2a0 = () => interopDefault(import('../pages/admin/index/picSource.vu
 const _4f738dec = () => interopDefault(import('../pages/admin/index/product.vue' /* webpackChunkName: "pages/admin/index/product" */))
 const _39b1ec07 = () => interopDefault(import('../pages/admin/index/test.vue' /* webpackChunkName: "pages/admin/index/test" */))
 const _549ff8cb = () => interopDefault(import('../pages/case/index.vue' /* webpackChunkName: "pages/case/index" */))
-const _58d98b66 = () => interopDefault(import('../pages/sitemap.vue' /* webpackChunkName: "pages/sitemap" */))
-const _4fff8e0c = () => interopDefault(import('../pages/about/about.js' /* webpackChunkName: "pages/about/about" */))
 const _b351177e = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
 const _d45f4d08 = () => interopDefault(import('../pages/admin/prewive.vue' /* webpackChunkName: "pages/admin/prewive" */))
 const _c5e2a2f4 = () => interopDefault(import('../pages/admin/readme.vue' /* webpackChunkName: "pages/admin/readme" */))
 const _1972b0fb = () => interopDefault(import('../pages/admin/register.vue' /* webpackChunkName: "pages/admin/register" */))
-const _40e61850 = () => interopDefault(import('../pages/about/_id.vue' /* webpackChunkName: "pages/about/_id" */))
 const _26489c1a = () => interopDefault(import('../pages/case/_id.vue' /* webpackChunkName: "pages/case/_id" */))
-const _5709525c = () => interopDefault(import('../pages/about/_year/_month/_list.vue' /* webpackChunkName: "pages/about/_year/_month/_list" */))
 const _647ec45d = () => interopDefault(import('../pages/case/_year/_mouth/_id.vue' /* webpackChunkName: "pages/case/_year/_mouth/_id" */))
 const _2bcebfea = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -52,10 +47,6 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/about",
-    component: _60ab8830,
-    name: "about"
-  }, {
     path: "/admin",
     component: _46a05dac,
     children: [{
@@ -132,14 +123,6 @@ export const routerOptions = {
     component: _549ff8cb,
     name: "case"
   }, {
-    path: "/sitemap",
-    component: _58d98b66,
-    name: "sitemap"
-  }, {
-    path: "/about/about",
-    component: _4fff8e0c,
-    name: "about-about"
-  }, {
     path: "/admin/login",
     component: _b351177e,
     name: "admin-login"
@@ -156,17 +139,9 @@ export const routerOptions = {
     component: _1972b0fb,
     name: "admin-register"
   }, {
-    path: "/about/:id",
-    component: _40e61850,
-    name: "about-id"
-  }, {
     path: "/case/:id",
     component: _26489c1a,
     name: "case-id"
-  }, {
-    path: "/about/:year/:month?/:list?",
-    component: _5709525c,
-    name: "about-year-month-list"
   }, {
     path: "/case/:year/:mouth?/:id?",
     component: _647ec45d,

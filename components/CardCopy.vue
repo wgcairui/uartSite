@@ -2,7 +2,7 @@
   <b-card>
     <b-row no-gutters>
       <b-col cols="12" md="3">
-        <my-img :src="pic" :alt="text" class="pic-1" />
+        <b-img :src="pic" :alt="text" class="pic-1" />
         <!-- <b-card-img-lazy :src="pic" :alt="text" class="pic-1"></b-card-img-lazy> -->
       </b-col>
       <b-col cols="12" md="9">
@@ -27,10 +27,8 @@
 <script lang="ts">
 /* eslint-disable vue/require-default-prop */
 import Vue from 'vue'
-import MyImg from './MyImg.vue'
 export default Vue.extend({
   name: 'CardCopy',
-  components: { MyImg },
   props: {
     img: String,
     text: { type: String },

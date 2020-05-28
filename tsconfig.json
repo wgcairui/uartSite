@@ -33,7 +33,7 @@
       "vue/types",
       "@nuxtjs/axios",
       "bootstrap-vue",
-      //"@types/tinymce"
+      "nuxt-i18n"
     ]
   },
   "exclude": ["tools/*"]

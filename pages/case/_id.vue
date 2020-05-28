@@ -42,7 +42,6 @@
 import Vue from 'vue'
 import CardCopy from '../../components/CardCopy.vue'
 import CaseAsid from '../../components/CaseAsid.vue'
-import { cases, getKey } from '../../components/hrefs'
 interface caseBody{
   data:{
     img:string
@@ -59,10 +58,9 @@ export default Vue.extend({
   },
   async asyncData ({ app, params, error }) {
     const url = '/case/' + params.id
-    const key = getKey(cases, url)
-    const listArray = await app.$Api.GeneralGetInfo({ table: 'Case', queryKeys: ['MainTitle'], MainTitle: key })
+    const listArray = await app.$Api.GeneralGetInfo({ table: 'Case', queryKeys: ['MainTitle'] })
     if (listArray?.length === 0) { error({ statusCode: 500, message: 'content null' }) }
-    return { listArray, key }
+    return { listArray,}
   },
   data () {
     return {
@@ -84,7 +82,7 @@ export default Vue.extend({
   },
   head () {
     return {
-      title: `${(this as any).key} - ${this.$defaults.name}`
+      title: `${(this as any).key} -`
     }
   }
 })

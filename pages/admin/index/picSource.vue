@@ -71,7 +71,7 @@
 import Vue from "vue";
 import { uploadResult, fileDirList, selectFiles } from "../../../types/typing";
 import gql from "graphql-tag";
-import Previewer from "../../../components/previewer.vue";
+import Previewer from "../../../components/admin/previewer.vue";
 export default Vue.extend({
   components: {
     Previewer

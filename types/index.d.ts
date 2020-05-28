@@ -10,6 +10,20 @@ import {
 import { VueApolloComponentOptions } from "vue-apollo/types/options";
 import { Auth } from "nuxtjs__auth";
 import { BvModal, BvToast } from "bootstrap-vue";
+interface params {
+  table: DbTables
+  isNews?: boolean
+  queryKeys?:string[]
+  [t:string]:any
+}
+interface Api {
+  axios: AxiosInstance
+  GeneralGetInfo: <T = any>(params: params) => Promise<T>
+  GetHomeNews: <T = any>() => Promise<T>
+  GetBuyList: <T = any>(city: string) => Promise<T>
+  Down: (fileName: string) => Promise<any>
+  GetContent: (link:string) => Promise<any>
+}
 
 declare module "koa"{
   interface Request{
@@ -44,6 +58,7 @@ declare module 'tinymce'{
 declare module "vue/types/vue" {
   // 3. 声明为 Vue 补充的东西
   interface Vue {
+    $Api: Api,
     $auth: Auth;
     $apollo: DollarApollo<this>;
     
@@ -73,5 +88,13 @@ declare module "vue/types/options" {
   }
   interface ComponentOptions<V extends Vue> {
     auth?: boolean | string;
+  }
+}
+declare module '@nuxt/types' {
+  interface Context {
+
+  }
+  interface NuxtAppOptions {
+      $Api: Api
   }
 }

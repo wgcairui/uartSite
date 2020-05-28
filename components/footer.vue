@@ -1,194 +1,109 @@
 <template>
   <b-col cols="12">
-    <b-row class="bg-dark px-4 pt-3 pb-0">
-      <b-col>
-        <b-container>
-          <b-row class="mb-5">
-            <b-col v-if="defaults.product" cols="6" sm="4" :md="md">
-              <ul>
-                <li>
-                  <strong>{{ $t('section.gk11oe') }}</strong>
-                </li>
-                <li v-if="defaults.product.showUps">
-                  <nuxt-link :to="product['UPS电源']">
-                    {{ $t('section.4t9bzs') }}
-                  </nuxt-link>
-                </li>
-                <li v-if="defaults.product.showDataCenter">
-                  <nuxt-link :to="product['数据中心']">
-                    {{ $t('section.4r35dn') }}
-                  </nuxt-link>
-                </li>
-                <li v-if="defaults.product.showAir">
-                  <nuxt-link :to="product['机房空调']">
-                    {{ $t('section.f7h57b') }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </b-col>
-            <b-col v-if="defaults.support" cols="6" sm="4" :md="md">
-              <ul>
-                <li>
-                  <strong>{{ $t('section.q5vjss') }}</strong>
-                </li>
-                <li v-if="defaults.buy && defaults.buy.serverCenter">
-                  <nuxt-link :to="about['销售服务中心']">
-                    {{ $t('section.ps0tuh') }}
-                  </nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link :to="support['服务支持']">
-                    {{ $t('section.y2a257') }}
-                  </nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link :to="support['常见问题']">
-                    {{ $t('section.o5n0th') }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </b-col>
-            <b-col v-if="defaults.buy" cols="6" sm="4" md="3">
-              <ul>
-                <li>
-                  <strong>{{ $t('section.21ws8d') }}</strong>
-                </li>
-                <li v-if="defaults.buy.serverCenter">
-                  <nuxt-link :to="about['经销商列表']">
-                    {{ $t('section.u7wjbw') }}
-                  </nuxt-link>
-                </li>
-                <li v-if="defaults.buy.blue">
-                  <a href="https://lgsm.tmall.com/">
-                    {{
-                      $t('section.6v39gj')
-                    }}
-                  </a>
-                </li>
-                <li v-if="defaults.buy.Tmall">
-                  <a href="https://leidisi.tmall.com/" target="_bank">
-                    {{
-                      $t('section.k9mydj')
-                    }}
-                  </a>
-                </li>
-                <li v-if="defaults.buy.jd">
-                  <a href="https://mall.jd.com/index-131620.html" target="_bank">
-                    {{
-                      $t('section.pfuunc')
-                    }}
-                  </a>
-                </li>
-                <li v-for="(val,key) in defaults.buy.userMall || []" :key="key">
-                  <a
-                    :href="val.src || '#'"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >{{ val.title || '' }}</a>
-                </li>
-              </ul>
-            </b-col>
-            <b-col cols="6" sm="4" :md="md">
-              <ul>
-                <li>
-                  <strong>{{ $t('guan-yu') }}{{ defaults.name }}</strong>
-                </li>
-                <li>
-                  <nuxt-link :to="about['公司简介']">
-                    {{ $t('section.v0otza') }}
-                  </nuxt-link>
-                </li>
-                <li v-if="defaults.news">
-                  <nuxt-link :to="news['全部新闻']">
-                    {{ $t('section.qis2vp') }}
-                  </nuxt-link>
-                </li>
-              </ul>
-            </b-col>
-            <b-col cols="6" sm="4" :md="md">
-              <ul>
-                <li>
-                  <strong>{{ $t('section.ri1giq') }}</strong>
-                </li>
-                <li>
-                  <a href="http://www.pesiv.com" target="_bank">
-                    {{
-                      $t('section.l7qkwb')
-                    }}
-                  </a>
-                </li>
-                <!-- <li>
-                  <a href="http://116.62.48.175:81" target="_bank">{{
-                    $t('section.wkyimq')
-                  }}</a>
-                </li>-->
-              </ul>
-            </b-col>
-          </b-row>
-        </b-container>
+    <b-row class="py-5 px-4" style="background-color:#333333">
+      <b-col md="3" cols="12">
+        <h6 class="text-light">公司简介</h6>
+        <p style="font-size:.8rem">
+          杭州蓝光电子有限公司旗下品牌雷迪司，致力于提供高效节能的电源、制冷、配电等数据中心机房一体化解决方案。
+          产品涉及UPS不间断电源、智能配电、PDU、消防、精密空调、机柜、动环监控、一体化机柜、微模块等产品。
+          同时提供物联网解决方案，包含数据中心运维云平台、智慧安全用电云平台等。
+        </p>
+      </b-col>
+      <b-col md="3" cols="12" class="d-none d-sm-block">
+        <h6 class="text-light">联系信息</h6>
+        <p style="font-size:.8rem" class="mb-2">
+          <b-icon-house-fill />公司总部：杭州蓝光电子有限公司
+        </p>
+        <p style="font-size:.8rem" class="mb-2">
+          <b-icon-chat />联系电话：0571-88254085 88254086
+        </p>
+        <p style="font-size:.8rem" class="mb-2">
+          <b-icon-geo />地址: 杭州市余杭区华一路1-1号1幢
+        </p>
+      </b-col>
+      <b-col md="3" cols="12" class="d-none d-sm-block">
+        <h6 class="text-light">快捷链接</h6>
+        <span>
+          <b-button variant="outline-secondary m-1" squared size="sm">网站首页</b-button>
+          <b-button variant="outline-secondary m-1" squared size="sm">关于我们</b-button>
+          <b-button variant="outline-secondary m-1" squared size="sm">成功案例</b-button>
+          <b-button variant="outline-secondary m-1" squared size="sm">联系我们</b-button>
+          <b-button variant="outline-secondary m-1" squared size="sm">使用场景</b-button>
+        </span>
+      </b-col>
+      <b-col md="3" cols="12" class="d-none d-sm-block">
+        <h6 class="text-light">关注公众号</h6>
+        <b-img
+          fluid
+          src="https://www.ladis.com.cn/_CMS_NEWS_IMG_/cms_images/fck/2017-03/05/828dd7c4-53c7-4a42-bb2c-7e1a12a93bcf.jpg"
+        ></b-img>
       </b-col>
     </b-row>
-    <friend-link />
-    <b-row>
-      <b-col cols="12" class="p-0 bg-dark p-2 d-flex flex-column flex-sm-row flex-wrap">
+    <b-row style="background-color:#222222">
+      <b-col cols="12" class="p-0 p-2 d-flex flex-column flex-sm-row flex-wrap footer-link">
         <div>
-          <nuxt-link to="/sitemap" class="px-1">
-            {{ $t('footer.9c708c') }}
-          </nuxt-link>
+          <nuxt-link to="/sitemap" class="px-1">{{ $t('footer.9c708c') }}</nuxt-link>
 
-          <nuxt-link :to="about['联系我们']" class="px-1">
-            {{ $t('footer.fp5qvs') }}
-          </nuxt-link>
+          <nuxt-link to="#" class="px-1">{{ $t('footer.fp5qvs') }}</nuxt-link>
 
-          <nuxt-link :to="about['加入我们']" class="px-1">
-            {{ $t('footer.ce1e0h') }}
-          </nuxt-link>
+          <nuxt-link to="#" class="px-1">{{ $t('footer.ce1e0h') }}</nuxt-link>
 
-          <nuxt-link :to="about['使用声明']" class="px-1">
-            {{ $t('footer.amhzvr') }}
-          </nuxt-link>
+          <nuxt-link to="#" class="px-1">{{ $t('footer.amhzvr') }}</nuxt-link>
 
-          <nuxt-link :to="about['隐私政策']" class="px-1">
-            {{ $t('footer.5d7lkm') }}
-          </nuxt-link>
+          <nuxt-link to="#" class="px-1">{{ $t('footer.5d7lkm') }}</nuxt-link>
         </div>
         <div class="beian">
           <span class="d-flex flex-column flex-sm-row align-items-center">
             <span>
-              <em>© 2019 All Rights Reserved</em>
+              <small>© 2019 All Rights Reserved</small>
             </span>
-            <span>{{ defaults.name }}</span>
-            <span>
-              <b-link target="_blank" href="http://www.beian.miit.gov.cn">
-                {{
-                  defaults.home.beian
-                }}
-              </b-link>
-            </span>
+            <small>ladis透传服务平台</small>
+
+            <b-link target="_blank" href="http://www.beian.miit.gov.cn">
+              <small class="ml-2">鄂ICP备19029626号-1</small>
+            </b-link>
           </span>
         </div>
       </b-col>
     </b-row>
+    <div class="row foot-nav-pc friendlink" style="display:none;">
+      <div class="row friendlylist">
+        <div class="col-md-12 left">&nbsp;</div>
+        <div class="col-md-12 right">
+          <a>友情链接：</a>
+
+          <a href="http://www.oboo.cn/" target="_blank" alt="触摸一体机">触摸一体机</a> &nbsp;&nbsp;
+          <a href="https://www.mustups.net/" target="_blank" alt="UPS电源">UPS电源</a> &nbsp;&nbsp;
+          <a href="http://www.fany-eda.com/" target="_blank" alt="凡亿pcb">凡亿pcb</a> &nbsp;&nbsp;
+          <a href="http://www.smt-dip.com/" target="_blank" alt="贴片加工厂">贴片加工厂</a> &nbsp;&nbsp;
+          <a href="http://www.cyzm.net/" target="_blank" alt="太阳能路灯">太阳能路灯</a> &nbsp;&nbsp;
+          <a href="http://www.tqsafe.com/" target="_blank" alt="家用保险箱">家用保险箱</a> &nbsp;&nbsp;
+          <a href="https://www.sgzm.com" target="_blank" alt="照明工程">照明工程</a> &nbsp;&nbsp;
+          <a href="http://www.eeio99.com/" target="_blank" alt="环形变压器 ">环形变压器</a> &nbsp;&nbsp;
+          <a href="http://www.sanxu88.com/" target="_blank" alt="碳纤维电地暖">碳纤维电地暖</a> &nbsp;&nbsp;
+          <a href="http://www.tuo-li.com/" target="_blank" alt="蓄电池">蓄电池</a> &nbsp;&nbsp;
+          <a href="http://www.tengshuodz.com/" target="_blank" alt="有机硅导电胶">有机硅导电胶</a> &nbsp;&nbsp;
+          <a href="http://www.gzchupai.com/" target="_blank" alt="触控一体机">触控一体机</a> &nbsp;&nbsp;
+          <a href="http://www.3doe.com/" target="_blank" alt="三维扫描仪">三维扫描仪</a> &nbsp;&nbsp;
+          <a href="http://www.paileshi.com.cn/" target="_blank" alt="干式变压器">干式变压器</a> &nbsp;&nbsp;
+          <a href="http://www.shiweisemi.com/" target="_blank" alt="LED芯片">LED芯片</a> &nbsp;&nbsp;
+          <a href="http://www.szlwtech.com/" target="_blank" alt="开关电源ic">开关电源ic</a> &nbsp;&nbsp;
+          <a href="http://www.cune.com.cn/ " target="_blank" alt="便携式UPS">便携式UPS</a> &nbsp;&nbsp;
+          <a href="http://www.jianqiaochina.com" target="_blank" alt="振动试验台">振动试验台</a> &nbsp;&nbsp;
+        </div>
+      </div>
+    </div>
   </b-col>
 </template>
 <script lang="ts">
-import Vue from 'vue'
-import { product, support, about, news } from './hrefs'
-import FriendLink from './FriendLink.vue'
+import Vue from "vue";
+import FriendLink from "./FriendLink.vue";
 export default Vue.extend({
-  name: 'LadisFooter',
-  components: { FriendLink },
-  data () {
-    return {
-      product,
-      support,
-      about,
-      news,
-      defaults: this.$store.state.defaults,
-      md: this.$store.state.defaults.buy ? 2 : 3
-    }
+  name: "LadisFooter",
+  data() {
+    return {};
   }
-})
+});
 </script>
 
 <style lang="scss" scoped>
@@ -247,5 +162,14 @@ strong {
 }
 strong {
   font-size: 1.2rem;
+}
+.img-fluid {
+  max-width: 50%;
+  height: auto;
+}
+.footer-link {
+  a {
+    font-size: 0.9rem;
+  }
 }
 </style>

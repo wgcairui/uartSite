@@ -1,122 +1,71 @@
 <template>
-  <b-container fluid class=" h-100 d-flex flex-column">
-    <b-row no-gutters class=" flex-grow-1">
-      <b-col cols="12">
+  <b-container fluid class="h-100 d-flex flex-column">
+    <b-row no-gutters>
+      <b-col>
         <b-carousel
           id="carousel-1"
-          :interval="3000"
-          fade
+          :interval="4000"
           controls
           indicators
           background="#ababab"
+          img-width="1024"
+          img-height="480"
           style="text-shadow: 1px 1px 2px #333;"
-          @sliding-end="swithProblem"
         >
-          <b-carousel-slide v-for="src in carousel" :key="String(src)">
-            <template v-slot:img>
-              <b-img
-                class=" w-100"
-                :src="src"
-                :srcset="generateImgsString(src)"
-              />
-            </template>
-          </b-carousel-slide>
+          <!-- Text slides with image -->
+          <b-carousel-slide
+            caption="First slide"
+            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+            img-src="https://www.ladishb.com/banner/banner01-pc.jpg"
+          ></b-carousel-slide>
+          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner02-pc.jpg"/>
+          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner03-pc.jpg"/>
+          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner04-pc.jpg"/>
         </b-carousel>
       </b-col>
     </b-row>
     <b-row no-gutters>
-      <b-col cols="12" class="bg-dark p-1">
-        <div class="d-flex justify-content-center ">
-          <b-link
-            :href="`/news/${problemTitle}`"
-            class="text-light stretched-link m-1 text-decoration-none"
-          >
-            {{ problemTitle }}
-          </b-link>
-        </div>
+      <b-col class="text-center p-3 my-4 mx-2">
+        <h3>主营业务</h3>
+        <p>集产品销售、技术服务、软件开发于一身，ladis致力向一流的物联网解决方案提供商而努力</p>
       </b-col>
     </b-row>
-    <b-row no-gutters class=" p-4">
-      <b-col>
-        <h2 class="text-center text-primary">
-          {{ $t('shou-hou-zhi-chi') }}
-        </h2>
-        <my-section />
+    <b-row no-gutters>
+      <b-col class="text-center p-3 my-4 mx-2">
+        <b-icon-server font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
+        <h5>软件产品</h5>
+        <p style="font-size:.9rem" class="text-black-50">物联网,模块化机房监控监控平台</p>
+      </b-col>
+      <b-col class="text-center p-3 my-4 mx-2">
+        <b-icon-controller font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
+        <h5>硬件产品</h5>
+        <p style="font-size:.9rem" class="text-black-50">提供(4G,wifi,LAN端口)转232,485串口的模块设备,用于设备接入.</p>
+      </b-col>
+      <b-col class="text-center p-3 my-4 mx-2">
+        <b-icon-tools font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
+        <h5>解决方案</h5>
+        <p style="font-size:.9rem" class="text-black-50">可用于用户接入使用工业232,485协议的机房设备</p>
+      </b-col>
+      <b-col class="text-center p-3 my-4 mx-2">
+        <b-icon-people-fill font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
+        <h5>用户案例</h5>
+        <p style="font-size:.9rem" class="text-black-50">客户安装案例,场景</p>
+      </b-col>
+    </b-row>
+    <b-row no-gutters class=" bg-light">
+      <b-col class=" d-flex flex-wrap" >
+        <b-card v-for="i in 5" :key="i" class=" flex-fill"></b-card>
       </b-col>
     </b-row>
   </b-container>
 </template>
 <script lang="ts">
-import Vue from 'vue'
-import MySection from '../components/MySection.vue'
-import { caseList } from '../types/typing'
+import Vue from "vue";
 export default Vue.extend({
-  components: { MySection },
-  async asyncData ({ app }) {
-    const GetNews: any[] = await app.$Api
-      .GetHomeNews()
-      .then((el:caseList[]) => {
-        return el.map(em => em.title)
-      }).catch(() => {
-        return []
-      })
-    // if (GetNews?.length === 0) { error({ statusCode: 500, message: 'content null' }) }
-    return { GetNews }
-  },
-  data () {
+  head() {
     return {
-      mainProps: {
-        center: true,
-        blank: true,
-        blankColor: '#bbb',
-        width: 600,
-        height: 100
-      },
-      problemNum: 0,
-      problemTitle: '室外一体化机柜的组成'
-    }
-  },
-  computed: {
-    carousel () {
-      const local = this.$i18n.locale
-      if (local === 'zh') {
-        return [
-          '/banner/banner01-pc.jpg',
-          '/banner/banner02-pc.jpg',
-          '/banner/banner03-pc.jpg',
-          '/banner/banner04-pc.jpg'
-        ]
-      } else {
-        return [
-          '/banner/EN-1-pc.jpg',
-          '/banner/EN-2-pc.jpg',
-          '/banner/EN-3-pc.jpg'
-        ]
-      }
-    },
-    newsNum () {
-      return this.$data.GetNews.length || 0
-    }
-  },
-  methods: {
-    // 生成图像集
-    generateImgsString (Img: string) {
-      const Mobile = Img.replace('pc', 'mobile')
-      const Pad = Img.replace('pc', 'pad')
-      const Pc = Img
-      return [`${Mobile} 760w`, `${Pad} 1200w`, `${Pc}`]
-    },
-    swithProblem () {
-      if (this.$data.problemNum === this.newsNum) {
-        this.$data.problemNum = 1
-      } else {
-        this.$data.problemNum++
-      }
-      this.$data.problemTitle = this.$data.GetNews[this.$data.problemNum - 1]
-    }
-  },
-  head () {
-    return this.$store.state.defaults.home.key
+      title: "ladis透传服务平台"
+    };
   }
-})
+});
 </script>
