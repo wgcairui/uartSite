@@ -28,6 +28,8 @@ import gql from "graphql-tag";
 import { selectFiles, cases, caseList } from "../../../types/typing";
 import deepmerge from "deepmerge";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       PageTitle: "",

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column h-100 overflow-hidden">
+  <div class="d-flex flex-column h-100 w-100 overflow-hidden">
     <div class="bg-dark p-2 d-flex flex-row align-items-center">
       <b-link to="/admin/">
         <h4 class="text-light text-center ml-3 mb-0">官网资讯发布</h4>

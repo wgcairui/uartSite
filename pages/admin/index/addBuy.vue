@@ -38,6 +38,8 @@ import Vue from "vue";
 import gql from "graphql-tag";
 import { buy, buyList } from "../../../types/typing";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     const daqu = [
       "华中地区销售服务中心",

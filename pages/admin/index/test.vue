@@ -19,6 +19,8 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       content: `<div>

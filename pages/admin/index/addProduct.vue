@@ -48,6 +48,8 @@ import {
 import { paresLink } from "../../../plugins/tool";
 
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     const ProductType = [
       "UPS电源",

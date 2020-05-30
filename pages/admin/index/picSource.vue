@@ -73,6 +73,8 @@ import { uploadResult, fileDirList, selectFiles } from "../../../types/typing";
 import gql from "graphql-tag";
 import Previewer from "../../../components/admin/previewer.vue";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   components: {
     Previewer
   },

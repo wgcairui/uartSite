@@ -32,6 +32,8 @@ import gql from "graphql-tag";
 import { supportList } from "../../../types/typing";
 import { paresLink } from "../../../plugins/tool";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       parentsUntil: [

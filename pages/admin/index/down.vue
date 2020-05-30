@@ -61,6 +61,8 @@ import Vue from "vue";
 import gql from "graphql-tag";
 import { support, supportList } from "../../../types/typing";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       softs: [],

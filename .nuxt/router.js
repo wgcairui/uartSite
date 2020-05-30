@@ -22,12 +22,15 @@ const _2a93d2a0 = () => interopDefault(import('../pages/admin/index/picSource.vu
 const _4f738dec = () => interopDefault(import('../pages/admin/index/product.vue' /* webpackChunkName: "pages/admin/index/product" */))
 const _39b1ec07 = () => interopDefault(import('../pages/admin/index/test.vue' /* webpackChunkName: "pages/admin/index/test" */))
 const _549ff8cb = () => interopDefault(import('../pages/case/index.vue' /* webpackChunkName: "pages/case/index" */))
+const _6c0a03d4 = () => interopDefault(import('../pages/solution/index.vue' /* webpackChunkName: "pages/solution/index" */))
 const _b351177e = () => interopDefault(import('../pages/admin/login.vue' /* webpackChunkName: "pages/admin/login" */))
 const _d45f4d08 = () => interopDefault(import('../pages/admin/prewive.vue' /* webpackChunkName: "pages/admin/prewive" */))
 const _c5e2a2f4 = () => interopDefault(import('../pages/admin/readme.vue' /* webpackChunkName: "pages/admin/readme" */))
 const _1972b0fb = () => interopDefault(import('../pages/admin/register.vue' /* webpackChunkName: "pages/admin/register" */))
 const _26489c1a = () => interopDefault(import('../pages/case/_id.vue' /* webpackChunkName: "pages/case/_id" */))
+const _e7a22988 = () => interopDefault(import('../pages/solution/_id.vue' /* webpackChunkName: "pages/solution/_id" */))
 const _647ec45d = () => interopDefault(import('../pages/case/_year/_mouth/_id.vue' /* webpackChunkName: "pages/case/_year/_mouth/_id" */))
+const _4e2ea9b4 = () => interopDefault(import('../pages/solution/_year/_mouth/_id.vue' /* webpackChunkName: "pages/solution/_year/_mouth/_id" */))
 const _2bcebfea = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -123,6 +126,10 @@ export const routerOptions = {
     component: _549ff8cb,
     name: "case"
   }, {
+    path: "/solution",
+    component: _6c0a03d4,
+    name: "solution"
+  }, {
     path: "/admin/login",
     component: _b351177e,
     name: "admin-login"
@@ -143,9 +150,17 @@ export const routerOptions = {
     component: _26489c1a,
     name: "case-id"
   }, {
+    path: "/solution/:id",
+    component: _e7a22988,
+    name: "solution-id"
+  }, {
     path: "/case/:year/:mouth?/:id?",
     component: _647ec45d,
     name: "case-year-mouth-id"
+  }, {
+    path: "/solution/:year/:mouth?/:id?",
+    component: _4e2ea9b4,
+    name: "solution-year-mouth-id"
   }, {
     path: "/",
     component: _2bcebfea,

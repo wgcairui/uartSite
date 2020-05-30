@@ -18,9 +18,9 @@
             text="Nulla vitae elit libero, a pharetra augue mollis interdum."
             img-src="https://www.ladishb.com/banner/banner01-pc.jpg"
           ></b-carousel-slide>
-          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner02-pc.jpg"/>
-          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner03-pc.jpg"/>
-          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner04-pc.jpg"/>
+          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner02-pc.jpg" />
+          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner03-pc.jpg" />
+          <b-carousel-slide img-src="https://www.ladishb.com/banner/banner04-pc.jpg" />
         </b-carousel>
       </b-col>
     </b-row>
@@ -42,9 +42,11 @@
         <p style="font-size:.9rem" class="text-black-50">提供(4G,wifi,LAN端口)转232,485串口的模块设备,用于设备接入.</p>
       </b-col>
       <b-col class="text-center p-3 my-4 mx-2">
-        <b-icon-tools font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
-        <h5>解决方案</h5>
-        <p style="font-size:.9rem" class="text-black-50">可用于用户接入使用工业232,485协议的机房设备</p>
+        <b-link to="/solution" class="text-decoration-none">
+          <b-icon-tools font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
+          <h5 class="">解决方案</h5>
+          <p style="font-size:.9rem" class="text-black-50">可用于用户接入使用工业232,485协议的机房设备</p>
+        </b-link>
       </b-col>
       <b-col class="text-center p-3 my-4 mx-2">
         <b-icon-people-fill font-scale="5" class="p-3 border rounded-circle mb-2" variant="info" />
@@ -52,9 +54,9 @@
         <p style="font-size:.9rem" class="text-black-50">客户安装案例,场景</p>
       </b-col>
     </b-row>
-    <b-row no-gutters class=" bg-light">
-      <b-col class=" d-flex flex-wrap" >
-        <b-card v-for="i in 5" :key="i" class=" flex-fill"></b-card>
+    <b-row no-gutters class="bg-light">
+      <b-col class="d-flex flex-wrap">
+        <!-- <b-card v-for="i in 5" :key="i" class=" flex-fill"></b-card> -->
       </b-col>
     </b-row>
   </b-container>
@@ -69,3 +71,10 @@ export default Vue.extend({
   }
 });
 </script>
+<style lang="scss" scoped>
+a {
+  h5 {
+    color: black;
+  }
+}
+</style>

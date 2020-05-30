@@ -20,6 +20,8 @@
 import Vue from "vue";
 import gql from "graphql-tag";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       buys: [],

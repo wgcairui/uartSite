@@ -61,6 +61,7 @@ import Vue from "vue";
 import { selectFiles, UserInfo } from "../../types/typing";
 import gql from "graphql-tag";
 export default Vue.extend({
+  layout:'login',
   data() {
       return {
         user: {} as UserInfo

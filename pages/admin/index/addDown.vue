@@ -46,6 +46,8 @@ import gql from "graphql-tag";
 import { selectFiles, ApolloMongoResult, support } from "../../../types/typing";
 import { paresLink } from "../../../plugins/tool";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       dev: {

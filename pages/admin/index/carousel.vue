@@ -11,6 +11,8 @@ import Vue from "vue";
 import { selectFiles, ApolloMongoResult } from "../../../types/typing";
 import gql from "graphql-tag";
 export default Vue.extend({
+  layout:'login',
+  auth:true,
   data() {
     return {
       imgs: []

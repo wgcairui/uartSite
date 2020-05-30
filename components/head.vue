@@ -22,7 +22,7 @@
           >{{ $t('head.kj9sli') }}</b-dropdown-item>
           <b-dropdown-item href="https://lgsm.tmall.com/" target="_blank">{{ $t('head.4ggyxs') }}</b-dropdown-item>
         </b-nav-item-dropdown>
-
+        <b-nav-item>解决方案</b-nav-item>
         <b-nav-item>{{ $t('head.ekilla') }}</b-nav-item>
         <b-nav-item>联系我们</b-nav-item>
 
@@ -81,6 +81,6 @@ em {
   color: #000;
 }
 .navbar-light .navbar-nav .nav-link {
-    color:#000;
+  color: #000;
 }
 </style>
